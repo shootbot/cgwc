@@ -511,15 +511,15 @@
                   <li><const>-1</const> if this is not an organ</li>
                 </ul>
               </li>
-              <li><var>organId</var>: unique id of this entity if it is an organ, <const>-1</const> otherwise</li>
+              <li><var>organId</var>: unique id of this entity if it is an organ, <const>0</const> otherwise</li>
               <!-- BEGIN level1 -->
               <li><var>organDir</var>: <const>N</const>, <const>W</const>, <const>S</const>, or <const>E</const>, not used in this league</li>
               <!-- END -->
               <!-- BEGIN level2 level3 level4 -->
               <li><var>organDir</var>: <const>N</const>, <const>W</const>, <const>S</const>, or <const>E</const> for the direction in which this organ is facing</li>
               <!-- END -->
-              <li><var>organParentId</var>: if it is an organ, the <var>organId</var> of the organ that this organ grew from (0 for <const>ROOT</const> organs), else <const>-1</const>.</li>
-              <li><var>organRootId</var>: if it is an organ, the <var>organId</var> of the <const>ROOT</const> that this organ originally grew from, else <const>-1</const>.</li>
+              <li><var>organParentId</var>: if it is an organ, the <var>organId</var> of the organ that this organ grew from (0 for <const>ROOT</const> organs), else <const>0</const>.</li>
+              <li><var>organRootId</var>: if it is an organ, the <var>organId</var> of the <const>ROOT</const> that this organ originally grew from, else <const>0</const>.</li>
             </ul>
             <!-- BEGIN level2 level3 -->
           </div>
@@ -1048,10 +1048,10 @@
           <li><const>-1</const> if this is not an organ</li>
         </ul>
       </li>
-      <li><var>organId</var>: unique id of this entity if it is an organ, <const>-1</const> otherwise</li>
+      <li><var>organId</var>: unique id of this entity if it is an organ, <const>0</const> otherwise</li>
       <li><var>organDir</var>: <const>N</const>, <const>W</const>, <const>S</const>, or <const>E</const> for the direction in which this organ is facing</li>
-      <li><var>organParentId</var>: if it is an organ, the <var>organId</var> of the organ that this organ grew from (0 for <const>ROOT</const> organs), else <const>-1</const>.</li>
-      <li><var>organRootId</var>: if it is an organ, the <var>organId</var> of the <const>ROOT</const> that this organ originally grew from, else <const>-1</const>.</li>
+      <li><var>organParentId</var>: if it is an organ, the <var>organId</var> of the organ that this organ grew from (0 for <const>ROOT</const> organs), else <const>0</const>.</li>
+      <li><var>organRootId</var>: if it is an organ, the <var>organId</var> of the <const>ROOT</const> that this organ originally grew from, else <const>0</const>.</li>
     </ul>
     
     <span class="statement-lineno">Next line:</span> <const>4</const> integers: <var>myA</var>,<var>myB</var>,<var>myC</var>,<var>myD</var> for the amount of each protein type you have.

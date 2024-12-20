@@ -502,15 +502,15 @@
                     <li><const>-1</const> si cette entité n'est pas un organe</li>
                   </ul>
                 </li>
-                <li><var>organId</var> : id unique de cette entité si c'est un organe</li>
+                <li><var>organId</var> : id unique de cette entité si c'est un organe, <const>0</const> sinon.</li>
                 <!-- BEGIN level1 -->
                 <li><var>organDir</var> : <const>N</const>, <const>W</const>, <const>S</const>, ou <const>E</const>, non utilisé dans cette ligue</li>
                 <!-- END -->
                 <!-- BEGIN level2 level3 level4 -->
                 <li><var>organDir</var> : <const>N</const>, <const>W</const>, <const>S</const>, ou <const>E</const> pour la direction vers laquelle cet organe fait face</li>
                 <!-- END -->
-                <li><var>organParentId</var> : si c'est un organe, l'<var>organId</var> de l'organe dont cet organe est issu (0 pour les organes <const>ROOT</const>), <const>-1</const> sinon.</li>
-                <li><var>organRootId</var> : si c'est un organe, l'<var>organId</var> de l'organe <const>ROOT</const> ancêtre de cet organe, <const>-1</const> sinon.</li>
+                <li><var>organParentId</var> : si c'est un organe, l'<var>organId</var> de l'organe dont cet organe est issu (0 pour les organes <const>ROOT</const>), <const>0</const> sinon.</li>
+                <li><var>organRootId</var> : si c'est un organe, l'<var>organId</var> de l'organe <const>ROOT</const> ancêtre de cet organe, <const>0</const> sinon.</li>
               </ul>
               <!-- BEGIN level2 level3 -->
             </div>
@@ -1013,10 +1013,10 @@
               <li><const>-1</const> si cette entité n'est pas un organe</li>
             </ul>
           </li>
-          <li><var>organId</var> : id unique de cette entité si c'est un organe</li>
+          <li><var>organId</var> : id unique de cette entité si c'est un organe, <const>0</const> sinon.</li>
           <li><var>organDir</var> : <const>N</const>, <const>W</const>, <const>S</const>, ou <const>E</const> pour la direction vers laquelle cet organe fait face</li>
-          <li><var>organParentId</var> : si c'est un organe, l'<var>organId</var> de l'organe dont cet organe est issu (0 pour les organes <const>ROOT</const>), <const>-1</const> sinon.</li>
-          <li><var>organRootId</var> : si c'est un organe, l'<var>organId</var> de l'organe <const>ROOT</const> ancêtre de cet organe, <const>-1</const> sinon.</li>
+          <li><var>organParentId</var> : si c'est un organe, l'<var>organId</var> de l'organe dont cet organe est issu (0 pour les organes <const>ROOT</const>), <const>0</const> sinon.</li>
+          <li><var>organRootId</var> : si c'est un organe, l'<var>organId</var> de l'organe <const>ROOT</const> ancêtre de cet organe, <const>0</const> sinon.</li>
         </ul>
         <span class="statement-lineno">Prochaine ligne :</span> <const>4</const> entiers : <var>myA</var>,<var>myB</var>,<var>myC</var>,<var>myD</var> pour les quantités de chaque protéine que vous possédez.
         <br/>
