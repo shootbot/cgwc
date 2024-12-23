@@ -14,3 +14,4 @@ bots/NN
 best.pkl
 last_generation_fitness.txt
 JulienMain.java
+dependency-reduced-pom.xml
