@@ -32,14 +32,14 @@ java -jar ./winter-2024.jar -p1 "winterChallenge2024.exe" -p2 "ruby winterChalle
 -   `-l` _<file>_: File output for logs
 -   `-d`: Referee initial data
 
-#### BrutalTester
+#### brutaltester
 https://github.com/dreignier/cg-brutaltester
-Example Run with BrutalTester
+Example Run with brutaltester
 
 ```bash
 java -jar cg-brutaltester.jar -r "java -jar winter-2024.jar" -p1 "winterChallenge2024.exe" -p2 "ruby winterChallenge.rb" -t 3 -n 15 -l "./logs/"
 ```
-This command runs the game using BrutalTester with the following options:
+This command runs the game using brutaltester with the following options:
 
 -   `-r "java -jar winter-2024.jar"`: Specifies the game runner.
 -   `-p1 "winterChallenge2024.exe"`: Command for Player 1.
