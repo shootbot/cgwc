@@ -16,14 +16,19 @@ You can run the game using any programming languages. For example, to run a game
 java -jar ./winter-2024.jar -p1 "winterChallenge2024.exe" -p2 "ruby winterChallenge.rb"
 ```
 
+Running with a Specific Seed and server mode:
+```bash
+java -jar ./winter-2024.jar -p1 "winterChallenge2024.exe" -p2 "ruby winterChallenge.rb" -s -seed 4810290338070827112 
+```
+
 #### Available Flags
 
 -   `-h`: Print the help
 -   `-p1` _<command>_: **Required.** Player 1 command line.
 -   `-p2` _<command>_: **Required.** Player 2 command line.
 -   `-s`: Server mode
--   `--league` _<level>_: League level
--   `--seed` _<seed>_: Seed
+-   `-league` _<level>_: League level
+-   `-seed` _<seed>_: Seed
 -   `-l` _<file>_: File output for logs
 -   `-d`: Referee initial data
 
