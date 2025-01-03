@@ -20,4 +20,15 @@ public enum OrganType {
     public int getIndex() {
         return this.ordinal();
     }
+
+    public static OrganType of(String type) {
+        return switch (type) {
+            case "ROOT" -> OrganType.ROOT;
+            case "BASIC" -> OrganType.BASIC;
+            case "TENTACLE" -> OrganType.TENTACLE;
+            case "HARVESTER" -> OrganType.HARVESTER;
+            case "SPORER" -> OrganType.SPORER;
+            default -> null;
+        };
+    }
 }

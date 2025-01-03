@@ -1,8 +1,8 @@
 package com.codingame.game.grid;
 
 public class Coord {
-    protected final int x;
-    protected final int y;
+    public final int x;
+    public final int y;
 
     public Coord(int x, int y) {
         this.x = x;

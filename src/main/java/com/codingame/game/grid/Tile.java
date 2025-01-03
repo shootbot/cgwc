@@ -41,6 +41,12 @@ public class Tile {
 
     }
 
+    public void setProtein(Protein protein) {
+        obstacle = false;
+        protein = protein;
+
+    }
+
     public boolean isObstacle() {
         return obstacle;
     }
@@ -85,4 +91,13 @@ public class Tile {
         return protein != null;
     }
 
+    @Override
+    public String toString() {
+        return "Tile{" +
+                "protein=" + protein +
+                ", obstacle=" + obstacle +
+                ", organ=" + organ +
+                ", coord=" + coord +
+                '}';
+    }
 }

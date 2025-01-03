@@ -8,6 +8,10 @@ public class PathItem {
     PathItem precedent = null;
     Coord coord;
 
+    PathItem(Coord coord) {
+        this.coord = coord;
+    }
+
     public int getTotalPrevisionalLength() {
         return totalPrevisionalLength;
     }

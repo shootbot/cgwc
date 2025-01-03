@@ -56,8 +56,7 @@ public class AStar {
     }
 
     PathItem getPathItemLinkedList() {
-        PathItem root = new PathItem();
-        root.coord = this.from;
+        PathItem root = new PathItem(from);
         openList.add(root);
 
         while (openList.size() > 0) {
@@ -101,8 +100,7 @@ public class AStar {
         if (closedList.containsKey(toCoord)) {
             return;
         }
-        PathItem pi = new PathItem();
-        pi.coord = toCoord;
+        PathItem pi = new PathItem(toCoord);
         pi.cumulativeLength = visiting.cumulativeLength + weightFunction.apply(toCoord);
         int manh = fromCoord.manhattanTo(toCoord);
         pi.totalPrevisionalLength = pi.cumulativeLength + manh;

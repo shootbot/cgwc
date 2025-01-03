@@ -270,4 +270,6 @@ public class GridMaker {
 
     }
 
+    public static Grid initGrid(int width, int height) {}
+
 }

@@ -33,4 +33,14 @@ public enum Direction {
         }
         throw new RuntimeException(alias + " is not a direction alias");
     }
+
+    public static Direction of(String dir) {
+        return switch (dir) {
+            case "N" -> NORTH;
+            case "E" -> EAST;
+            case "S" -> SOUTH;
+            case "W" -> WEST;
+            default -> null;
+        };
+    }
 }

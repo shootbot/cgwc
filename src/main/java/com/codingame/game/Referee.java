@@ -1,5 +1,7 @@
 package com.codingame.game;
 
+import com.codingame.game.grid.Coord;
+import com.codingame.game.grid.Tile;
 import com.codingame.gameengine.core.AbstractPlayer.TimeoutException;
 import com.codingame.gameengine.core.AbstractReferee;
 import com.codingame.gameengine.core.MultiplayerGameManager;
@@ -56,6 +58,8 @@ public class Referee extends AbstractReferee {
     public void gameTurn(int turn) {
         game.resetGameTurnData();
 
+        // printState(turn);
+
         // Give input to players
         for (Player player : gameManager.getActivePlayers()) {
             for (String line : Serializer.serializeFrameInfoFor(player, game)) {
@@ -72,6 +76,13 @@ public class Referee extends AbstractReferee {
 
         if (gameManager.getActivePlayers().size() < 2) {
             abort();
+        }
+    }
+
+    private void printState(int turn) {
+        System.out.println("turn " + turn);
+        for (Tile t : game.grid.cells.values()) {
+            System.out.println(t);
         }
     }
 

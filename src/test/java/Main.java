@@ -9,11 +9,11 @@ public class Main {
 
         // Set seed here (leave empty for random)
         gameRunner.setSeed(7700970175115819776l);
-        gameRunner.setLeagueLevel(5);
+        gameRunner.setLeagueLevel(2);
 
         // Select agents here
-        gameRunner.addAgent("python3 config/Boss.py", "Boss");
-        gameRunner.addAgent("python3 config/Boss.py", "Boss");
+        gameRunner.addAgent(BfsPlayer.class, "Boss");
+        gameRunner.addAgent(WaitPlayer.class, "Boss");
 
         Properties params = new Properties();
         // Set params here

@@ -19,13 +19,25 @@ public class Organ {
     int rootId;
 
     public Organ(Player owner, OrganType type, Direction direction) {
-        this.owner = owner;
+        this(ENTITY_COUNT+1, type, owner, null, direction, ENTITY_COUNT+1);
+        ENTITY_COUNT++;
+//        this.owner = owner;
+//        this.type = type;
+//        this.direction = direction;
+//        this.parent = null;
+//        this.id = ++ENTITY_COUNT;
+//        this.children = new ArrayList<>();
+//        this.rootId = this.id;
+    }
+
+    public Organ(int id, OrganType type, Player owner, Organ parent, Direction direction, int rootId) {
+        this.id = id;
         this.type = type;
+        this.owner = owner;
+        this.parent = parent;
         this.direction = direction;
-        this.parent = null;
-        this.id = ++ENTITY_COUNT;
+        this.rootId = rootId;
         this.children = new ArrayList<>();
-        this.rootId = this.id;
     }
 
     public Player getOwner() {
@@ -95,5 +107,14 @@ public class Organ {
 
     public int getRootId() {
         return rootId;
+    }
+
+    @Override
+    public String toString() {
+        return "Organ{" +
+                "type=" + type +
+                ", owner=" + owner +
+                ", id=" + id +
+                '}';
     }
 }
