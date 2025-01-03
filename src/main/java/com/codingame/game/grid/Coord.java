@@ -73,4 +73,20 @@ public class Coord {
         return Math.abs(x - this.x) + Math.abs(y - this.y);
     }
 
+    public String direction(Coord to) {
+        if (manhattanTo(to) != 1) return null; // todo?
+        if (x == to.x) {
+            if (y > to.y) {
+                return "N";
+            } else {
+                return "S";
+            }
+        } else {
+            if (x > to.x) {
+                return "W";
+            } else {
+                return "E";
+            }
+        }
+    }
 }

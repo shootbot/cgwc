@@ -17,9 +17,10 @@ public class Organ {
     Direction direction;
     Coord pos;
     int rootId;
+    int parentId;
 
     public Organ(Player owner, OrganType type, Direction direction) {
-        this(ENTITY_COUNT+1, type, owner, null, direction, ENTITY_COUNT+1);
+        this(ENTITY_COUNT+1, type, owner, null, direction, 0, ENTITY_COUNT+1);
         ENTITY_COUNT++;
 //        this.owner = owner;
 //        this.type = type;
@@ -30,12 +31,13 @@ public class Organ {
 //        this.rootId = this.id;
     }
 
-    public Organ(int id, OrganType type, Player owner, Organ parent, Direction direction, int rootId) {
+    public Organ(int id, OrganType type, Player owner, Organ parent, Direction direction, int parentId, int rootId) {
         this.id = id;
         this.type = type;
         this.owner = owner;
         this.parent = parent;
         this.direction = direction;
+        this.parentId = parentId;
         this.rootId = rootId;
         this.children = new ArrayList<>();
     }

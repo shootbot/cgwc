@@ -16,7 +16,7 @@ public class Tile {
     private Protein protein;
     private boolean obstacle; //XXX: it could just be a no-tile
     private Organ organ;
-    private Coord coord;
+    public Coord coord;
 
     public Tile(Coord coord) {
         this.coord = coord;

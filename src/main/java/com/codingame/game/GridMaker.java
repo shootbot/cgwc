@@ -270,6 +270,12 @@ public class GridMaker {
 
     }
 
-    public static Grid initGrid(int width, int height) {}
+    public static Grid initGrid(int width, int height, List<Tile> tiles) {
+        Grid grid = new Grid(width, height, true);
+        for (Tile t: tiles) {
+            grid.cells.put(t.coord, t);
+        }
+        return grid;
+    }
 
 }

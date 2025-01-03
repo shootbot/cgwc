@@ -31,8 +31,24 @@ public class Bfs {
 //        }
 //    }
 
+//    public Deque<PathItem> find(Collection<Coord> starts, Set<Coord> ends) {
+//        PathItem item = bfs(starts, ends);
+//        Deque<PathItem> path = new ArrayDeque<>();
+//        if (item != null) {
+//            PathItem i = item;
+//            while (i != null) {
+//                path.offerFirst( i);
+//                i = i.precedent;
+//            }
+//        }
+//        return path;
+//    }
 
-    public PathItem findNearestProtein(Collection<Coord> starts) {
+        public PathItem find(Collection<Coord> starts, Set<Coord> ends) {
+        return bfs(starts, ends);
+    }
+
+    public PathItem bfs(Collection<Coord> starts, Set<Coord> ends) {
         starts.forEach(c -> {
                 PathItem pi = new PathItem(c);
                 queue.offerLast(pi);
@@ -40,7 +56,7 @@ public class Bfs {
         while (!queue.isEmpty()) {
             PathItem current = queue.poll();
 
-            if (grid.get(current.coord).hasProtein()) {
+            if (ends.contains(current.coord)) {
                 return current;
             }
 
@@ -48,11 +64,21 @@ public class Bfs {
                 Tile nextTile = grid.get(next);
                 if (!nextTile.isObstacle() && !nextTile.hasOrgan() && !visited[next.getX()][next.getY()]) {
                     visited[next.getX()][next.getY()] = true;
-                    queue.add(new PathItem(next));
+                    PathItem nextPi = new PathItem(next);
+                    nextPi.precedent = current;
+                    queue.add(nextPi);
                 }
             }
         }
 
         return null;
+    }
+
+    public Set<Coord> inflate(List<Coord> proteins) {
+        Set<Coord> ret = new HashSet<>();
+        for (Coord c: proteins) {
+            ret.addAll(grid.getNeighbours(c));
+        }
+        return ret;
     }
 }

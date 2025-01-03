@@ -26,8 +26,7 @@ public class Player extends AbstractMultiplayerPlayer {
     Map<Integer, String> messages;
     List<String> unassignedMessages;
 
-    public Player(int id) {
-        this.index = id;
+    public Player() {
         storage = new HashMap<>();
         organs = new ArrayList<>();
         actions = new ArrayList<>();
@@ -143,6 +142,10 @@ public class Player extends AbstractMultiplayerPlayer {
             messages.put(root.getId(), m);
         }
 
+    }
+
+    public void setId(int id) {
+        this.index = id;
     }
 
     @Override
